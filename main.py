@@ -184,7 +184,7 @@ if __name__ == "__main__":
     # Maximum number of levels in tree
     max_depth = 'None'#np.arange(3,8,2)
     # Minimum number of samples required to split a node
-    min_samples_split = np.linspace(2/maxMinLS, 12/maxMinLS, num = 5)
+    min_samples_split = np.linspace(2/maxMinLS, 22/maxMinLS, num = 5)
     # Minimum number of samples required at each leaf node
     msl = np.arange(1,np.ceil(np.round(np.sqrt(maxnumPTS))))
     mf = np.append(10,mf.shape[0])
