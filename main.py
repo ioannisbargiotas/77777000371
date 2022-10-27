@@ -177,7 +177,7 @@ if __name__ == "__main__":
     maxnumPTS = X.shape[1]
     #
     # Number of features to consider at every split
-    mf = np.arange(1,np.ceil(np.round(np.sqrt(maxnumPTS))))
+    mf = np.arange(1,np.ceil(np.round(np.sqrt(maxnumPTS))+1))
     mf = np.append(10,mf.shape[0])
     mf_iter = mf.min()
     max_features = [int(x) for x in np.linspace(1,np.ceil(np.round(np.sqrt(maxnumPTS))),num = mf_iter)]#np.arange(1,int(np.round(0.7*maxnumPTS)+1))#
@@ -192,7 +192,6 @@ if __name__ == "__main__":
     min_samples_leaf = [int(x) for x in np.linspace(1, int(np.round(0.3*maxMinLS)+1), num = msl_iter)]#np.arange(1,int(np.round(0.2*maxMinLS)+1))#
     # Create the random grid
     random_grid = {'max_features': max_features,
-                   'min_samples_split': min_samples_split,
                    'min_samples_leaf': min_samples_leaf}
     
     #Grid search with 1fold as CV schema (reminder:we use the OOB decision score for Validation) (see Silke Janitza and Roman Hornung 2018)
