@@ -121,7 +121,7 @@ def InterpretImportance1(X,Y,params,iters,complexity):
         Xtemp = X[:,DescendAvImpIndex[0:j+1]]
         
         if Xtemp.shape[1]<params['max_features']:
-            clf = RandomForestClassifier(n_estimators = Ntrees,max_depth = params['max_depth'],max_features = Xtemp.shape[1],min_samples_leaf = params['min_samples_leaf'],min_samples_split = params['min_samples_split'],oob_score=True)
+            clf = RandomForestClassifier(n_estimators = Ntrees,max_features = Xtemp.shape[1],min_samples_leaf = params['min_samples_leaf'],min_samples_split = params['min_samples_split'],oob_score=True)
             #clf = RandomForestClassifier(n_estimators = Ntrees,max_features = Xtemp.shape[1],min_samples_leaf = params['min_samples_leaf'],oob_score=True)
         else:
             #clf = RandomForestClassifier(n_estimators = Ntrees,max_depth = params['max_depth'],max_features = params['max_features'],min_samples_leaf = params['min_samples_leaf'],min_samples_split = params['min_samples_split'],oob_score=True)    
@@ -192,7 +192,6 @@ if __name__ == "__main__":
     min_samples_leaf = [int(x) for x in np.linspace(1, int(np.round(0.2*maxMinLS)+1), num = 10)]#np.arange(1,int(np.round(0.2*maxMinLS)+1))#
     # Create the random grid
     random_grid = {'max_features': max_features,
-                   'max_depth': max_depth,
                    'min_samples_split': min_samples_split,
                    'min_samples_leaf': min_samples_leaf}
     
