@@ -181,7 +181,7 @@ if __name__ == "__main__":
     mf = np.arange(1,mf_end)
     mf = np.append(10,mf.shape[0])
     mf_iter = mf.min()
-    max_features = np.arange(int(np.round(0.3*maxnumPTS),int(np.round(0.7*maxnumPTS)+1))#[int(x) for x in np.linspace(1,mf_end,num = mf_iter)]#
+    max_features = np.arange(int(np.round(0.3*maxnumPTS)),int(np.round(0.7*maxnumPTS)+1))#[int(x) for x in np.linspace(1,mf_end,num = mf_iter)]#
     # Maximum number of levels in tree
     #max_depth = 'None'#np.arange(3,8,2)
     # Minimum number of samples required to split a node
@@ -189,7 +189,7 @@ if __name__ == "__main__":
     # Minimum number of samples required at each leaf node
     msl = np.arange(1,int(np.round(0.5*maxMinLS)+1))
     msl = np.append(10,msl.shape[0])
-    msl_iter = mf.min()
+    msl_iter = msl.min()
     min_samples_leaf = np.arange(1,int(np.round(np.sqrt(maxMinLS)+1)))#[int(x) for x in np.linspace(1, int(np.round(0.5*maxMinLS)+1), num = msl_iter)]#
     # Create the random grid
     random_grid = {'max_features': max_features,
