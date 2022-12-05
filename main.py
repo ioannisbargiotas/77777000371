@@ -181,7 +181,7 @@ if __name__ == "__main__":
     mf = np.arange(1,mf_end)
     mf = np.append(10,mf.shape[0])
     mf_iter = mf.min()
-    max_features = np.arange(int(np.round(0.3*maxnumPTS)),int(np.round(0.7*maxnumPTS)+1))#[int(x) for x in np.linspace(1,mf_end,num = mf_iter)]#
+    max_features = np.arange(int(np.round(0.5*maxnumPTS)),int(np.round(0.9*maxnumPTS)+1))#[int(x) for x in np.linspace(1,mf_end,num = mf_iter)]#
     # Maximum number of levels in tree
     #max_depth = 'None'#np.arange(3,8,2)
     # Minimum number of samples required to split a node
